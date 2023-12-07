@@ -1,6 +1,105 @@
 ﻿namespace C__OOP_HW003_array_r00
 {
-    internal class Program
+    /*internal class Program1 //1D array wit custom size
+    {
+        static void Main(string[] args)
+        {
+            int length;
+            bool flag;
+
+            do
+            {
+                Console.Write("enter size arr -> ");
+                flag = int.TryParse(Console.ReadLine(), out length);
+                if (!flag)
+                {
+                    Console.Write("\tERROR\n");
+                    continue;
+                }
+                else if (length == 0)
+                {
+                    Console.Write($"\tERROR! size = {length}\n");
+                    flag = false;
+                }
+
+            } while (!flag);
+
+            length = Math.Abs(length);
+            Random rand = new Random();
+            int[] arr = new int[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                arr[i] = rand.Next(0, 11);
+            }
+
+            for (int i = 0; i < length; i++)
+            {
+                Console.Write($"{arr[i]} | ");
+            }
+        }
+    }*/
+
+    /*internal class Program2 //1D array with custom size height x width and chars that are not repeated
+    {
+        static void Main(string[] args)
+        {
+            int length;
+            bool flag;
+            const int START = 33, END = 127;
+
+            do
+            {
+                Console.Write("enter size arr -> ");
+                flag = int.TryParse(Console.ReadLine(), out length);
+                if (!flag)
+                {
+                    Console.Write("\tERROR!\n");
+                    continue;
+                }
+                else if (length > END - START)
+                {
+                    Console.Write("\tERROR! size out of range\n");
+                    flag = false;
+                }
+                else if (length == 0)
+                {
+                    Console.Write($"\tERROR! size = {length}\n");
+                    flag = false;
+                }
+
+            } while (!flag);
+
+            length = Math.Abs(length);
+            Random rand = new Random();
+            char[] arr = new char[length];
+
+            for (int i = 0; i < length;)
+            {
+                flag = false;
+                char temp = (char)rand.Next(START, END);
+
+                for (int j = 0; j < i; j++)
+                {
+                    if (temp == arr[j])
+                        flag = true;
+                }
+                if (flag)
+                    continue;
+                arr[i] = temp;
+                i++;
+            }
+
+            for (int i = 0; i < length; i++)
+            {
+                Console.Write($"{arr[i]} | ");
+                if (i % 9 == 0 && i != 0)
+                    Console.WriteLine();
+            }
+        }
+    }*/
+
+    internal class Program3 //creation 1-2-3D custom arrays in RunTime
     {
         static void Main(string[] args)
         {
@@ -85,6 +184,7 @@
             {
                 Console.Write($"rang {i + 1} = size {size[i]}\n");
             }
+            Console.WriteLine();
 
             for (int i = 0; i < size[0]; i++)
             {
